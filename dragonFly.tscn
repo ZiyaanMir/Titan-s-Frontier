@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmrs1acf0qqot"]
+
+[ext_resource type="VideoStream" path="res://art/dragon-fly-with-Question.ogv" id="1_xvbww"]
+[ext_resource type="Script" path="res://VideoStreamPlayer.gd" id="2_v8t2b"]
+
+[sub_resource type="Gradient" id="Gradient_ruu57"]
+offsets = PackedFloat32Array(0.978142, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j02qs"]
+gradient = SubResource("Gradient_ruu57")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dfIntro" type="VideoStreamPlayer" parent="."]
+z_index = 5
+layout_mode = 1
+offset_left = -526.0
+offset_top = -516.0
+offset_right = 562.0
+offset_bottom = 572.0
+stream = ExtResource("1_xvbww")
+autoplay = true
+script = ExtResource("2_v8t2b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+zoom = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -1
+scale = Vector2(9.23438, 1381.75)
+texture = SubResource("GradientTexture1D_j02qs")
+
+[connection signal="finished" from="dfIntro" to="dfIntro" method="_on_finished"]

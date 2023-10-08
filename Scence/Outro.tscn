@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://plpf4ro0sauc"]
+
+[ext_resource type="VideoStream" path="res://Art/Video/Outro-Final.ogv" id="1_mhwni"]
+[ext_resource type="Script" path="res://Scripts/after_outro.gd" id="2_e45bf"]
+
+[node name="Data_upload" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_mhwni")
+autoplay = true
+script = ExtResource("2_e45bf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(964, 531)
+zoom = Vector2(3, 3)
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxjph1o1y81hm"]
+
+[ext_resource type="Texture2D" uid="uid://dbn6fxmpbkjd6" path="res://Art/Players/drbrook-fullmotion.png" id="1_kes0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvynn"]
+size = Vector2(22, 16)
+
+[node name="Interactive_NPCs" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 8)
+shape = SubResource("RectangleShape2D_wvynn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_kes0e")
+hframes = 4
+vframes = 4
+frame = 12

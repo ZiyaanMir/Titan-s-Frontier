@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt5ha38s0qcjv"]
+
+[ext_resource type="Texture2D" uid="uid://btt72vonsy63n" path="res://Art/Players/DrMarkFoster-export.png" id="1_jd5c5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqu3j"]
+size = Vector2(1204, 710)
+
+[node name="Interactive_NPCs" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 649)
+shape = SubResource("RectangleShape2D_mqu3j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jd5c5")
+hframes = 4
+vframes = 4

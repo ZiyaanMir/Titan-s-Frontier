@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://buj1ty7rw525o"]
+
+[ext_resource type="VideoStream" path="res://Art/Video/water-analysis-clip.ogv" id="1_maipr"]
+[ext_resource type="Script" path="res://Scripts/after_water_task.gd" id="2_uph4d"]
+
+[node name="water_task" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_maipr")
+autoplay = true
+script = ExtResource("2_uph4d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 548)
+zoom = Vector2(2, 2)
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]

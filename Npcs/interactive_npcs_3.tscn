@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwguaiohpcu66"]
+
+[ext_resource type="Texture2D" uid="uid://yed6cr7x5pkq" path="res://Art/Players/DRCHEN-fullmotion.png" id="1_7epjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvynn"]
+size = Vector2(121, 70)
+
+[node name="Interactive_NPCs" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 66)
+shape = SubResource("RectangleShape2D_wvynn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7epjt")
+hframes = 4
+vframes = 4
+frame = 12

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d5eln7rcu481"]
+
+[ext_resource type="VideoStream" path="res://Art/Video/IntroVid.ogv" id="1_lbddr"]
+[ext_resource type="Script" path="res://Scripts/after_intro.gd" id="2_kgso4"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_lbddr")
+autoplay = true
+script = ExtResource("2_kgso4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 548)
+zoom = Vector2(2, 2)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]

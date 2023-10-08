@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://da3cogp2rp8oi"]
+
+[ext_resource type="VideoStream" path="res://art/incorrect-passcode.ogv" id="1_or0ge"]
+[ext_resource type="Script" path="res://incorrect_code.gd" id="2_j6cnw"]
+
+[sub_resource type="Gradient" id="Gradient_rtnn1"]
+offsets = PackedFloat32Array(0.954839, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2md7c"]
+gradient = SubResource("Gradient_rtnn1")
+
+[node name="incorrectCode" type="VideoStreamPlayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1679.0
+offset_top = -1539.0
+offset_right = -591.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+stream = ExtResource("1_or0ge")
+autoplay = true
+script = ExtResource("2_j6cnw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(723.667, 592.667)
+scale = Vector2(6.93034, 1161.88)
+texture = SubResource("GradientTexture1D_2md7c")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
